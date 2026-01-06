@@ -1,0 +1,14 @@
+import java.io.*;
+import  java.util.*;
+import java.lang.Math;
+class UserMainCode
+{
+  public int addLastDigit(int input1,int input2)
+  {
+    input1=Math.abs(input1);
+        input2=Math.abs(input2);
+        int a=input1 % 10;
+        int b=input2 % 10;
+        return a+b;
+  }
+}
