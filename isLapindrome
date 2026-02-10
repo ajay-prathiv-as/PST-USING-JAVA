@@ -1,0 +1,38 @@
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+class Codechef {
+
+    public static String lapindrome(String s) {
+        int n = s.length();
+        int mid = n / 2;
+
+        String left, right;
+        if (n % 2 == 0) {
+            left = s.substring(0, mid);
+            right = s.substring(mid);
+        } else {
+            left = s.substring(0, mid);
+            right = s.substring(mid + 1);
+        }
+
+        char[] L = left.toCharArray();
+        char[] R = right.toCharArray();
+        Arrays.sort(L);
+        Arrays.sort(R);
+
+        if (Arrays.equals(L, R)) return "YES";
+        return "NO";
+    }
+
+    public static void main (String[] args) throws java.lang.Exception {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        int T = Integer.parseInt(br.readLine().trim());
+
+        while (T-- > 0) {
+            String s = br.readLine().trim();
+            System.out.println(lapindrome(s));
+        }
+    }
+}
